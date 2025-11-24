@@ -4,7 +4,7 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expense Tracker (Broken Version)</title>
+  <title>Expense Tracker (Fixed)</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,15 +16,14 @@
     <!-- Input Section -->
     <div class="input-box">
       <input type="text" id="title" placeholder="Expense Title">
-      <input type="number" id="amount">
-      <!-- missing placeholder on purpose -->
+      <input type="number" id="amount" placeholder="Amount">
       <button id="add-btn">Add</button>
     </div>
 
     <!-- Expense List -->
     <ul id="expense-list"></ul>
 
-    <!-- Total Amount (broken update logic) -->
+    <!-- Total Amount -->
     <div class="total">
       Total: <span id="total-amount">0</span>
     </div>
