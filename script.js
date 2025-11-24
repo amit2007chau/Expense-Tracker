@@ -4,7 +4,7 @@ let addBtn = document.getElementById("add-btn");
 let expenseList = document.getElementById("expense-list");
 let totalAmountEl = document.getElementById("total-amount");
 
-/* BROKEN: LocalStorage loaded incorrectly */
+/* Fixed: The data was not being saved properly because of the broken logic, we have fixed it. */
 let expenses;
 try {
   expenses = JSON.parse(localStorage.getItem("expenses"));
@@ -19,9 +19,9 @@ function updateTotal() {
   totalAmountEl.innerText = total;
 }
 
-/* Does NOT save properly */
+/* Fixed: setItem required a string but the array was directly being passed */
 function saveData() {
-  localStorage.setItem("expenses", expenses);
+  localStorage.setItem("expenses",  JSON.stringify(expenses));
 }
 
 /* BROKEN RENDER FUNCTION */
